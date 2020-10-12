@@ -30,7 +30,7 @@ public class PlayerController : MonoBehaviour
     public float dashLength = 0.5f;
     public float dashCooldown = 1f;
     public float dashInvinciblity = 0.5f;
-    private float dashCounter;
+    [HideInInspector]public float dashCounter;
     private float dashCoolCounter;
 
 
@@ -104,7 +104,7 @@ public class PlayerController : MonoBehaviour
             {
                 activeMoveSpeed = dashSpeed;
                 dashCounter = dashLength;
-
+                PlayerHealthController.instance.MakeInvincible(dashInvinciblity);
                 Anim.SetTrigger("dash");
             }
 
@@ -116,6 +116,7 @@ public class PlayerController : MonoBehaviour
             {
                 activeMoveSpeed = moveSpeed;
                 dashCoolCounter = dashCooldown;
+                
             }
         }
         if(dashCoolCounter > 0)
