@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 6366393268120786488}
   - component: {fileID: 6366393268120786494}
   - component: {fileID: 6366393268120786495}
-  m_Layer: 0
+  - component: {fileID: 7171553050174314028}
+  m_Layer: 12
   m_Name: Box
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -69,8 +70,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -721550213
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 4098156409588004937, guid: b1e514ee9c00f0c458e99f588dfa4cb0,
     type: 3}
@@ -130,3 +131,20 @@ MonoBehaviour:
   - {fileID: 5433524651202421689, guid: 93d02d26d265d9b4ab5e43d9773d8209, type: 3}
   - {fileID: 7387663068713324337, guid: 9ab2027948b7b2343b920fbd0c58952f, type: 3}
   maxPieces: 5
+  shouldDropItems: 1
+  itemsToDrop:
+  - {fileID: 4538178810393243835, guid: ad4abeb9b369ca844855e21337df691e, type: 3}
+  - {fileID: 8495399169226442459, guid: a7254b2a932ca004cb472dc16f47742a, type: 3}
+  itemDropPercent: 25
+--- !u!114 &7171553050174314028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6366393268120786491}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89ebb9a9247e7cd478a3c0441b72ef45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

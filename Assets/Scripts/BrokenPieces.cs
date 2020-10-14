@@ -12,6 +12,9 @@ public class BrokenPieces : MonoBehaviour
 
     public float lifetime = 3f;
 
+    public SpriteRenderer theSR;
+    public float fadeSpeed = 2.5f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,9 +31,13 @@ public class BrokenPieces : MonoBehaviour
 
         lifetime -= Time.deltaTime;
 
-        if(lifetime < 0)
+        if (lifetime < 0)
         {
+            theSR.color = new Color(theSR.color.r, theSR.color.g, theSR.color.b, Mathf.MoveTowards(theSR.color.a, 0f, fadeSpeed * Time.deltaTime));
+            if (theSR.color.a == 0)
+            {
             Destroy(gameObject);
+            }
         }
     }
 }

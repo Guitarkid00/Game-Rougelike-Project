@@ -28,7 +28,7 @@ public class EnemyBullet : MonoBehaviour
         {
             PlayerHealthController.instance.DamagePlayer();
         }
-
+        AudioManager.instance.playSFX(4);
         Destroy(gameObject);
     }
 
