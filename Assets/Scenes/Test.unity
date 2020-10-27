@@ -16935,10 +16935,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 9004936000795956237, guid: 48496e2de0b81424ead767efb7100607,
+        type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9004936001229922408, guid: 48496e2de0b81424ead767efb7100607,
         type: 3}
       propertyPath: m_Name
       value: UI Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 9004936001229922415, guid: 48496e2de0b81424ead767efb7100607,
+        type: 3}
+      propertyPath: newGameScene
+      value: Test
+      objectReference: {fileID: 0}
+    - target: {fileID: 9004936001229922415, guid: 48496e2de0b81424ead767efb7100607,
+        type: 3}
+      propertyPath: mainMenuScene
+      value: Title Menu
       objectReference: {fileID: 0}
     - target: {fileID: 9004936001229922419, guid: 48496e2de0b81424ead767efb7100607,
         type: 3}
