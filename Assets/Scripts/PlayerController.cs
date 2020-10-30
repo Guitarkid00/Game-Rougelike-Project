@@ -51,7 +51,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (canMove)
+        if (canMove && !LevelManager.instance.isPaused)
         {
             //Basic Movement
             moveInput.x = Input.GetAxisRaw("Horizontal");
