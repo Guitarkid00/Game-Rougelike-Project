@@ -105,6 +105,10 @@ MonoBehaviour:
   - {fileID: 297425918590819241, guid: 02ba71d25961e1544a9ba8693fdaecfc, type: 3}
   hitEffect: {fileID: 5209921751449708245, guid: 5cca842d3db057c48b9a58c880bc79a3,
     type: 3}
+  shouldDropItems: 1
+  itemsToDrop:
+  - {fileID: 2274249145791525681, guid: e033f97cce74de04c8f600840b26b28b, type: 3}
+  itemDropPercent: 25
 --- !u!50 &3613655027654716790
 Rigidbody2D:
   serializedVersion: 4
