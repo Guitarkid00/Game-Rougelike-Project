@@ -101,7 +101,7 @@ MonoBehaviour:
   theRB: {fileID: 8764074084870747327}
   impactEffect: {fileID: 3826348390706222220, guid: 06335058fd552f64586e969597628225,
     type: 3}
-  damageToGive: 50
+  damageToGive: 500
 --- !u!61 &8764074084870747326
 BoxCollider2D:
   m_ObjectHideFlags: 0

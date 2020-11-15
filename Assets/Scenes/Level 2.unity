@@ -406,6 +406,12 @@ PrefabInstance:
       propertyPath: maxDistanceToGun
       value: 12
       objectReference: {fileID: 0}
+    - target: {fileID: 7942627022332545285, guid: 5d5350143f0283945acb327606ffce12,
+        type: 3}
+      propertyPath: centerEnd
+      value: 
+      objectReference: {fileID: 4912769016126954270, guid: 9f9321ef0bad6be4aa9955be98e796f8,
+        type: 3}
     - target: {fileID: 7942627022332545286, guid: 5d5350143f0283945acb327606ffce12,
         type: 3}
       propertyPath: m_Name

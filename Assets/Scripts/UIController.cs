@@ -30,6 +30,9 @@ public class UIController : MonoBehaviour
     public Image currentGun;
     public Text gunText;
 
+    public Slider bossHealthBar;
+
+
     private void Awake()
     {
         instance = this;
@@ -76,14 +79,14 @@ public class UIController : MonoBehaviour
     public void newGame()
     {
         SceneManager.LoadScene(newGameScene);
-
+        Destroy(PlayerController.instance.gameObject);
         Time.timeScale = 1f;
     }
 
     public void returnToMainMenu()
     {
         Time.timeScale = 1f;
-
+        Destroy(PlayerController.instance.gameObject);
         SceneManager.LoadScene(mainMenuScene);
     }    
 

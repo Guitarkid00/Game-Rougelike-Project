@@ -291,7 +291,7 @@ GameObject:
   - component: {fileID: 2878074008033571559}
   - component: {fileID: 2878074008033571552}
   m_Layer: 8
-  m_Name: Player
+  m_Name: Player - Sneaker
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -341,6 +341,7 @@ MonoBehaviour:
   canMove: 1
   availableGuns:
   - {fileID: 7845116267154464077}
+  currentGun: 0
 --- !u!58 &2878074008033571558
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -466,7 +467,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 401864009
   m_SortingLayer: 6
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: -1620803097451951628, guid: f9fa167fb3d117b4ca8e67a307b6742d,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
