@@ -12,16 +12,12 @@ public class PlayerController : MonoBehaviour
 
     public Rigidbody2D theRB;
 
-    private Camera theCam;
+    
     public Transform gunArm;
 
     public Animator Anim;
 
-    public GameObject bulletToFire;
-    public Transform firePoint;
 
-    public float timeBetweenShots;
-    private float shotCounter;
 
     public SpriteRenderer bodySR;
 
@@ -36,16 +32,26 @@ public class PlayerController : MonoBehaviour
     [HideInInspector]
     public bool canMove = true;
 
+    public List<Gun> availableGuns = new List<Gun>();
+    [HideInInspector]
+    public int currentGun;
+
     private void Awake()
     {
         instance = this;
+
+        DontDestroyOnLoad(gameObject);
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        theCam = Camera.main;
+        
+
         activeMoveSpeed = moveSpeed;
+
+        UIController.instance.currentGun.sprite = availableGuns[currentGun].gunUI;
+        UIController.instance.gunText.text = availableGuns[currentGun].weaponName;
     }
 
     // Update is called once per frame
@@ -65,7 +71,7 @@ public class PlayerController : MonoBehaviour
 
 
             Vector3 mousePos = Input.mousePosition;
-            Vector3 screenPoint = theCam.WorldToScreenPoint(transform.localPosition);
+            Vector3 screenPoint = CameraController.instance.mainCamera.WorldToScreenPoint(transform.localPosition);
 
             //Flip player based on mouse location
             if (mousePos.x < screenPoint.x)
@@ -86,24 +92,24 @@ public class PlayerController : MonoBehaviour
 
             gunArm.rotation = Quaternion.Euler(0, 0, angle);
 
-            if (Input.GetMouseButtonDown(0))
+           if(Input.GetKeyDown(KeyCode.Tab))
             {
-                Instantiate(bulletToFire, firePoint.position, firePoint.rotation);
-                shotCounter = timeBetweenShots;
-
-                AudioManager.instance.playSFX(12);
-            }
-            if (Input.GetMouseButton(0))
-            {
-                shotCounter -= Time.deltaTime;
-                if (shotCounter <= 0)
+                if(availableGuns.Count > 0)
                 {
-                    Instantiate(bulletToFire, firePoint.position, firePoint.rotation);
-                    shotCounter = timeBetweenShots;
+                    currentGun++;
+                    if(currentGun > availableGuns.Count - 1)
+                    {
+                        currentGun = 0;
+                    }
 
-                    AudioManager.instance.playSFX(12);
+                    SwitchGun();
+                }
+                else
+                {
+                    Debug.Log("Player has no guns!");
                 }
             }
+            
             //DASH SECTION
 
             if (Input.GetKeyDown(KeyCode.Space))
@@ -133,8 +139,6 @@ public class PlayerController : MonoBehaviour
                 dashCoolCounter -= Time.deltaTime;
             }
 
-
-
             if (moveInput != Vector2.zero)
             {
                 Anim.SetBool("isMoving", true);
@@ -149,5 +153,18 @@ public class PlayerController : MonoBehaviour
             theRB.velocity = Vector2.zero;
             Anim.SetBool("isMoving", false);
         }
+    }
+
+    public void SwitchGun()
+    {
+        foreach(Gun theGun in availableGuns)
+        {
+            theGun.gameObject.SetActive(false);
+        }
+
+        availableGuns[currentGun].gameObject.SetActive(true);
+
+        UIController.instance.currentGun.sprite = availableGuns[currentGun].gunUI;
+        UIController.instance.gunText.text = availableGuns[currentGun].weaponName;
     }
 }
