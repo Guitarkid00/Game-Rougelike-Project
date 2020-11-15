@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class CharacterSelector : MonoBehaviour
 {
+    private bool canSelect;
+
+    public GameObject message;
+
+    public PlayerController playerToSpawn;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -15,4 +21,6 @@ public class CharacterSelector : MonoBehaviour
     {
         
     }
+
+
 }
